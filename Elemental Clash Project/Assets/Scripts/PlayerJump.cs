@@ -36,6 +36,8 @@ public class PlayerJump : MonoBehaviour
         // If we requested a jump in the last frame...
         if (attemptJump)
         {
+            Debug.Log("attempted to jump");
+            Debug.Log("touching ground =" + touchingGround);
             // ...and if we were also touching the ground in the last frame...
             if (touchingGround == true)
             {
@@ -62,10 +64,12 @@ public class PlayerJump : MonoBehaviour
     // This function is called by Unity when our player collides with another object
     public void OnCollisionStay2D(Collision2D collision)
     {
+        Debug.Log("colided with " + collision.collider.tag);
         // We need to check if the thing we collided with (collision.collider) is actually ground
         // so we compare the tag on it with our "groundTag" variable ("Ground") by default
         if (collision.collider.CompareTag(groundTag) == true)
         {
+            Debug.Log("ground tag found");
             // If the thing we touched was actually the ground, then we should set our touchingGround flag to true
             // This means that if we request a jump this frame, then next frame the jump will actually be processed since we were touching the ground.
             touchingGround = true;
