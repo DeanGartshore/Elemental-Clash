@@ -20,6 +20,7 @@ public class PlayerHealth : MonoBehaviour
     // if they have less than 0
     public void ChangeHealth(int changeAmount)
     {
+        Debug.Log("Change health " + changeAmount);
 
         //Take our current health add the change amount and store
         // the result back in the current health variable 
