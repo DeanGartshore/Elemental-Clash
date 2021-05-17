@@ -19,10 +19,10 @@ public class Hazard : MonoBehaviour
     //Built-in function
     // this function will be called when an other object bumbs into the one this 
     // script is attached to
-    void OnCollisionEnter2D(Collision2D collisionData)
+    void OnTriggerEnter2D(Collider2D collisionData)
     {
         // get the object we collid with
-        Collider2D objectWeCollidedWith = collisionData.collider;
+        Collider2D objectWeCollidedWith = collisionData;
 
         // get the player script attached to that object( if there is one)
         PlayerHealth player = objectWeCollidedWith.GetComponent<PlayerHealth>();

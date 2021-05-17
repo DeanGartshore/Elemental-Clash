@@ -22,7 +22,7 @@ public class EnemyPatrol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float distance = (patrolpoints[currentPoint] - -(Vector2)transform.position).magnitude;
+        float distance = (patrolpoints[currentPoint] - (Vector2)transform.position).magnitude;
         if(distance <= stopDistance)
         {
             currentPoint = currentPoint + 1;
