@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
     //player starting health
     public int startingHealth;
-
+    public string gameOverScene;
     private int currentHealth;// keeps track of players current health
     //bulit in function called when the script is created 
     //and will change as the game gose on
@@ -29,7 +30,7 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth, 0, startingHealth);
         // should die if health drops to 0
 
-        if (currentHealth == 0)
+        if (currentHealth <= 0)
         {
 
 
@@ -46,6 +47,9 @@ public class PlayerHealth : MonoBehaviour
         // this will destroy the game object that this script is attached to
 
         Destroy(gameObject);
+
+        //load the game over scene
+        SceneManager.LoadScene(gameOverScene);
 
     }
 

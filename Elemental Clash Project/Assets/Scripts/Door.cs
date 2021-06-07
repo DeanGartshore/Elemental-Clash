@@ -13,7 +13,7 @@ public class Door : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D otherCollider)
     {
 
-        //Debug.Log("Object hit the door!");
+        Debug.Log("Object hit the door!");
 
         if(otherCollider.tag == "Player" )
         {
